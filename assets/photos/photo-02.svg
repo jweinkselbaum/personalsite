@@ -1,0 +1,11 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g2" x1="160" y1="40" x2="980" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F6B73" />
+      <stop offset="1" stop-color="#60A7A0" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g2)" />
+  <rect x="160" y="180" width="880" height="560" rx="42" fill="white" fill-opacity="0.14" />
+  <text x="80" y="820" fill="white" fill-opacity="0.72" font-size="62" font-family="Arial, sans-serif">Replace me</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="900" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#27251F" />
+      <stop offset="1" stop-color="#5F584B" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g3)" />
+  <path d="M0 560C128 510 256 484 384 524C512 564 640 670 768 676C896 682 1024 588 1200 500V900H0V560Z" fill="#C24F2B" fill-opacity="0.45"/>
+  <text x="80" y="820" fill="white" fill-opacity="0.76" font-size="62" font-family="Arial, sans-serif">Your story image</text>
+</svg>
