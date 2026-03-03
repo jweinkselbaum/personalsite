@@ -1,0 +1,17 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg5" cx="70%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#c8d8e8"/>
+      <stop offset="100%" stop-color="#e0dbd2"/>
+    </radialGradient>
+    <radialGradient id="orb5" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5a7a9a" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#5a7a9a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg5)"/>
+  <circle cx="800" cy="250" r="300" fill="url(#orb5)"/>
+  <path d="M0 650 L150 540 L300 620 L450 490 L600 590 L750 460 L900 560 L1050 440 L1200 520 L1200 900 L0 900Z" fill="#b8c8d8" opacity="0.4"/>
+  <rect x="440" y="390" width="320" height="72" rx="36" fill="rgba(255,253,247,0.65)" stroke="rgba(22,19,14,0.12)" stroke-width="1.5"/>
+  <text x="600" y="434" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="26" font-weight="500" fill="#5a5349">Your photo here</text>
+</svg>
