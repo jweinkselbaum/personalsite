@@ -3,176 +3,367 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jack Weinkselbaum | Technical Project Manager</title>
-    <meta
-      name="description"
-      content="Personal website for Jack Weinkselbaum — Technical Project Manager at the WNBA."
-    />
+    <title>Jack Weinkselbaum — Technical Project Manager</title>
+    <meta name="description" content="Jack Weinkselbaum — Technical Project Manager at the WNBA. Building systems, experiences, and teams that move fast and execute cleanly." />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header" id="top">
-      <a class="brand" href="#top">JW</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-      <nav class="site-nav" aria-label="Main navigation">
+
+    <!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#top">JW</a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#interests" class="nav-link">Interests</a>
+          <a href="#gallery" class="nav-link">Photos</a>
+          <a href="#connect" class="nav-link">Connect</a>
+        </nav>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile nav overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true">
+      <nav class="mobile-nav">
         <a href="#about">About</a>
         <a href="#work">Work</a>
         <a href="#interests">Interests</a>
         <a href="#gallery">Photos</a>
         <a href="#connect">Connect</a>
       </nav>
-    </header>
+    </div>
 
     <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-bg" data-parallax="0.25"></div>
-        <div class="hero-orb hero-orb-one" data-parallax="0.4"></div>
-        <div class="hero-orb hero-orb-two" data-parallax="0.15"></div>
 
-        <div class="hero-content reveal">
-          <p class="eyebrow">Personal site</p>
-          <h1 id="hero-title">Jack Weinkselbaum</h1>
-          <p class="hero-subtitle">
-            Technical Project Manager at the WNBA building systems, experiences, and teams that move fast and execute cleanly.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-solid" href="#work">See my work</a>
-            <a class="btn btn-outline" href="#connect">Get in touch</a>
+      <!-- ═══════════════════════ HERO ═══════════════════════ -->
+      <section class="hero" id="top">
+        <!-- Decorative orbs -->
+        <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+          <!-- Text side -->
+          <div class="hero-text">
+            <p class="hero-eyebrow" id="hero-eyebrow">
+              <span class="eyebrow-pip"></span>
+              Technical Project Manager&nbsp;&nbsp;·&nbsp;&nbsp;WNBA
+            </p>
+
+            <h1 class="hero-name">
+              <span class="name-line-wrap"><span class="name-line">Jack</span></span>
+              <span class="name-line-wrap"><span class="name-line">Weinksel-</span></span>
+              <span class="name-line-wrap"><span class="name-line">baum.</span></span>
+            </h1>
+
+            <p class="hero-tagline" id="hero-tagline">
+              Building systems, experiences, and teams<br class="br-desktop" /> that move fast and execute cleanly.
+            </p>
+
+            <div class="hero-cta" id="hero-cta">
+              <a href="#work" class="btn btn-primary">View my work</a>
+              <a href="#connect" class="btn btn-ghost">Get in touch</a>
+            </div>
+          </div>
+
+          <!-- Photo side -->
+          <div class="hero-visual" id="hero-visual">
+            <div class="photo-frame" id="photo-frame">
+              <!--
+                Add your profile photo:
+                Save it as  assets/photos/profile.jpg
+                It will appear here automatically.
+              -->
+              <img
+                src="assets/photos/profile.jpg"
+                alt="Jack Weinkselbaum"
+                id="profile-img"
+                onerror="this.style.display='none'; document.getElementById('photo-frame').classList.add('no-photo')"
+              />
+              <div class="photo-initials">JW</div>
+            </div>
+            <div class="visual-badge">
+              <span class="badge-dot"></span>
+              <span>Open to opportunities</span>
+            </div>
           </div>
         </div>
 
-        <div class="hero-scroll-hint" aria-hidden="true">
+        <!-- Scroll indicator -->
+        <div class="scroll-hint" id="scroll-hint" aria-hidden="true">
+          <div class="scroll-track">
+            <div class="scroll-thumb"></div>
+          </div>
           <span>Scroll</span>
-          <span class="arrow">↓</span>
         </div>
       </section>
 
-      <section class="story" id="about" aria-labelledby="about-title">
-        <div class="story-sticky">
-          <p class="eyebrow">About me</p>
-          <h2 id="about-title">Execution with taste and precision.</h2>
-          <p>
-            I thrive at the intersection of product, operations, and technology. My focus is turning ambitious ideas into
-            shipped outcomes with clear timelines, strong communication, and measurable impact.
-          </p>
+      <!-- ═══════════════════════ MARQUEE ═══════════════════════ -->
+      <div class="marquee-section" aria-hidden="true">
+        <div class="marquee-fade-left"></div>
+        <div class="marquee-fade-right"></div>
+        <div class="marquee-track">
+          <div class="marquee-inner">
+            <span>Technical Leadership</span><span class="marquee-sep">·</span>
+            <span>Engineering Coordination</span><span class="marquee-sep">·</span>
+            <span>WNBA</span><span class="marquee-sep">·</span>
+            <span>Cross-functional Alignment</span><span class="marquee-sep">·</span>
+            <span>Sports Technology</span><span class="marquee-sep">·</span>
+            <span>Running</span><span class="marquee-sep">·</span>
+            <span>Broadway</span><span class="marquee-sep">·</span>
+            <span>Process Design</span><span class="marquee-sep">·</span>
+            <span>Project Management</span><span class="marquee-sep">·</span>
+            <!-- Duplicate for seamless loop -->
+            <span>Technical Leadership</span><span class="marquee-sep">·</span>
+            <span>Engineering Coordination</span><span class="marquee-sep">·</span>
+            <span>WNBA</span><span class="marquee-sep">·</span>
+            <span>Cross-functional Alignment</span><span class="marquee-sep">·</span>
+            <span>Sports Technology</span><span class="marquee-sep">·</span>
+            <span>Running</span><span class="marquee-sep">·</span>
+            <span>Broadway</span><span class="marquee-sep">·</span>
+            <span>Process Design</span><span class="marquee-sep">·</span>
+            <span>Project Management</span><span class="marquee-sep">·</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+      <section class="about section-pad" id="about">
+        <div class="about-inner">
+          <!-- Sticky text column -->
+          <div class="about-sticky">
+            <div class="section-label">
+              <span class="label-num">01</span>
+              <span class="label-text">About</span>
+            </div>
+
+            <h2 class="reveal-headline">
+              <div class="line-wrap"><span>Execution</span></div>
+              <div class="line-wrap"><span>with taste</span></div>
+              <div class="line-wrap"><span>and precision.</span></div>
+            </h2>
+
+            <div class="about-body reveal-fade">
+              <p>I thrive at the intersection of product, operations, and technology. My focus is turning ambitious ideas into shipped outcomes — with clear timelines, strong communication, and measurable impact.</p>
+              <p>At the WNBA, I lead the technical development of wnba.com, coordinating a team of engineers to deliver high-quality digital experiences for millions of fans and the league.</p>
+            </div>
+          </div>
+
+          <!-- Scrolling cards column -->
+          <div class="about-steps">
+            <article class="pillar reveal-card">
+              <div class="pillar-number">01</div>
+              <h3>Who I am</h3>
+              <p>A technical project manager who values high standards, collaborative culture, and pragmatic decision-making at the intersection of sports and technology.</p>
+            </article>
+
+            <article class="pillar reveal-card">
+              <div class="pillar-number">02</div>
+              <h3>What I do</h3>
+              <p>I align cross-functional teams, remove blockers, and drive projects from kickoff to launch — keeping quality and momentum high throughout the entire lifecycle.</p>
+            </article>
+
+            <article class="pillar reveal-card">
+              <div class="pillar-number">03</div>
+              <h3>How I work</h3>
+              <p>Transparent planning, clear accountability, and consistent momentum. I believe the best teams move with purpose and communicate with radical clarity.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════ WORK ═══════════════════════ -->
+      <section class="work section-pad" id="work">
+        <div class="section-intro">
+          <div class="section-label">
+            <span class="label-num">02</span>
+            <span class="label-text">Work</span>
+          </div>
+
+          <h2 class="reveal-headline">
+            <div class="line-wrap"><span>Building impact</span></div>
+            <div class="line-wrap"><span>at the WNBA.</span></div>
+          </h2>
         </div>
 
-        <div class="story-steps">
-          <article class="step reveal">
-            <h3>Who I am</h3>
-            <p>
-              I’m a technical project manager who values high standards, collaborative culture, and pragmatic decision-making.
-            </p>
+        <!-- Bento grid layout -->
+        <div class="bento-grid">
+          <article class="bento-card bento-featured reveal-card">
+            <div class="bento-tag">Engineering Leadership</div>
+            <h3>Leading a team of 6 engineers</h3>
+            <p>Directing the technical development of wnba.com — balancing delivery speed, code quality, and team health to serve millions of fans across every platform.</p>
+            <div class="bento-accent" aria-hidden="true"></div>
           </article>
-          <article class="step reveal">
-            <h3>What I do</h3>
-            <p>
-              I align cross-functional teams, remove blockers, and drive projects from kickoff to launch while keeping quality high.
-            </p>
+
+          <article class="bento-card reveal-card">
+            <div class="bento-tag">Cross-functional</div>
+            <h3>Alignment across disciplines</h3>
+            <p>Connecting engineering, business, and operations so teams make faster decisions with fewer surprises and clearer ownership.</p>
+            <div class="bento-accent" aria-hidden="true"></div>
           </article>
-          <article class="step reveal">
-            <h3>How I work</h3>
-            <p>
-              I believe the best teams move with clarity. I prioritize transparent planning, accountability, and momentum.
-            </p>
+
+          <article class="bento-card reveal-card">
+            <div class="bento-tag">Process</div>
+            <h3>Workflows that scale</h3>
+            <p>Designing project rituals that reduce friction and help teams deliver meaningful work — consistently and sustainably, sprint after sprint.</p>
+            <div class="bento-accent" aria-hidden="true"></div>
+          </article>
+
+          <article class="bento-card bento-wide reveal-card">
+            <div class="bento-tag">Vision</div>
+            <h3>Where technology meets sport</h3>
+            <p>Great sports technology amplifies the fan experience and empowers the athlete. That belief drives every project I take on — from a single sprint to a full product roadmap.</p>
+            <div class="bento-accent" aria-hidden="true"></div>
           </article>
         </div>
       </section>
 
-      <section class="work section" id="work" aria-labelledby="work-title">
-        <div class="section-head reveal">
-          <p class="eyebrow">Professional focus</p>
-          <h2 id="work-title">Building impact at the WNBA</h2>
-        </div>
+      <!-- ═══════════════════════ INTERESTS ═══════════════════════ -->
+      <section class="interests section-pad" id="interests">
+        <div class="section-intro">
+          <div class="section-label">
+            <span class="label-num">03</span>
+            <span class="label-text">Interests</span>
+          </div>
 
-        <div class="cards">
-          <article class="card reveal">
-            <h3>Engineering leadership</h3>
-            <p>Led a team of 6 engineers in developing the WNBA website, balancing delivery speed, quality, and team coordination.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Cross-functional alignment</h3>
-            <p>Connecting engineering, business, and operations so teams make faster decisions with fewer surprises.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Process optimization</h3>
-            <p>Designing workflows and project rituals that reduce friction and help teams deliver meaningful work consistently.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="interests section" id="interests" aria-labelledby="interests-title">
-        <div class="section-head reveal">
-          <p class="eyebrow">Outside of work</p>
-          <h2 id="interests-title">Interests and energy sources</h2>
+          <h2 class="reveal-headline">
+            <div class="line-wrap"><span>Outside</span></div>
+            <div class="line-wrap"><span>of work.</span></div>
+          </h2>
         </div>
 
         <div class="interests-grid">
-          <article class="interest reveal">
-            <span class="chip">Running</span>
+          <article class="interest-card reveal-card" data-accent="orange">
+            <div class="interest-icon" aria-hidden="true">🏃</div>
+            <div class="interest-chip">Running</div>
             <h3>Discipline in motion</h3>
-            <p>Running keeps me grounded and focused, and it reinforces consistency, endurance, and growth over time.</p>
+            <p>Running keeps me grounded and focused. It reinforces consistency, endurance, and the value of showing up every day — the same qualities that make great teams.</p>
           </article>
-          <article class="interest reveal">
-            <span class="chip">Broadway</span>
-            <h3>Storytelling & performance</h3>
-            <p>I love the craft and energy of Broadway, where precision, emotion, and teamwork create unforgettable experiences.</p>
+
+          <article class="interest-card reveal-card" data-accent="teal">
+            <div class="interest-icon" aria-hidden="true">🎭</div>
+            <div class="interest-chip">Broadway</div>
+            <h3>Storytelling &amp; performance</h3>
+            <p>I love the craft and energy of Broadway — where precision, emotion, and teamwork create unforgettable experiences. Theatre taught me how high-stakes collaboration works.</p>
           </article>
-          <article class="interest reveal">
-            <span class="chip">Growth</span>
+
+          <article class="interest-card reveal-card" data-accent="gold">
+            <div class="interest-icon" aria-hidden="true">📈</div>
+            <div class="interest-chip">Growth</div>
             <h3>Continuous learning</h3>
-            <p>I focus on getting better every season by refining craft, communication, and leadership.</p>
+            <p>Every season is an opportunity to refine craft, deepen leadership, and explore new domains. I'm always reading, listening, and improving — relentlessly.</p>
           </article>
         </div>
       </section>
 
-      <section class="gallery section" id="gallery" aria-labelledby="gallery-title">
-        <div class="section-head reveal">
-          <p class="eyebrow">Photo gallery</p>
-          <h2 id="gallery-title">Moments, context, and perspective</h2>
-          <p class="section-note">
-            Replace these starter images with your own in
-            <code>/Users/jack/Coding/Website/assets/photos/</code>.
+      <!-- ═══════════════════════ GALLERY ═══════════════════════ -->
+      <section class="gallery section-pad" id="gallery">
+        <div class="section-intro">
+          <div class="section-label">
+            <span class="label-num">04</span>
+            <span class="label-text">Photos</span>
+          </div>
+
+          <h2 class="reveal-headline">
+            <div class="line-wrap"><span>Moments &amp;</span></div>
+            <div class="line-wrap"><span>perspective.</span></div>
+          </h2>
+
+          <p class="gallery-note reveal-fade">
+            Drop your photos into <code>assets/photos/</code> named <code>photo-01.jpg</code> through <code>photo-05.jpg</code>.
           </p>
         </div>
 
         <div class="gallery-grid">
-          <figure class="gallery-item reveal">
-            <img src="assets/photos/photo-01.svg" alt="Gallery placeholder 1" loading="lazy" />
+          <figure class="gallery-item g-tall reveal-card">
+            <img src="assets/photos/photo-01.jpg" alt="Photo 1" loading="lazy"
+              onerror="this.src='assets/photos/photo-01.svg'; this.onerror=null" />
           </figure>
-          <figure class="gallery-item reveal">
-            <img src="assets/photos/photo-02.svg" alt="Gallery placeholder 2" loading="lazy" />
+          <figure class="gallery-item reveal-card">
+            <img src="assets/photos/photo-02.jpg" alt="Photo 2" loading="lazy"
+              onerror="this.src='assets/photos/photo-02.svg'; this.onerror=null" />
           </figure>
-          <figure class="gallery-item reveal">
-            <img src="assets/photos/photo-03.svg" alt="Gallery placeholder 3" loading="lazy" />
+          <figure class="gallery-item reveal-card">
+            <img src="assets/photos/photo-03.jpg" alt="Photo 3" loading="lazy"
+              onerror="this.src='assets/photos/photo-03.svg'; this.onerror=null" />
+          </figure>
+          <figure class="gallery-item g-wide reveal-card">
+            <img src="assets/photos/photo-04.jpg" alt="Photo 4" loading="lazy"
+              onerror="this.src='assets/photos/photo-01.svg'; this.onerror=null" />
+          </figure>
+          <figure class="gallery-item reveal-card">
+            <img src="assets/photos/photo-05.jpg" alt="Photo 5" loading="lazy"
+              onerror="this.src='assets/photos/photo-02.svg'; this.onerror=null" />
           </figure>
         </div>
       </section>
 
-      <section class="connect section" id="connect" aria-labelledby="connect-title">
-        <div class="section-head reveal">
-          <p class="eyebrow">Let’s connect</p>
-          <h2 id="connect-title">Open to meaningful collaboration.</h2>
-          <p>Use your preferred channel below and I’ll respond as soon as possible.</p>
+      <!-- ═══════════════════════ CONNECT ═══════════════════════ -->
+      <section class="connect section-pad" id="connect">
+        <div class="connect-bg" aria-hidden="true">
+          <div class="connect-orb connect-orb-1"></div>
+          <div class="connect-orb connect-orb-2"></div>
         </div>
 
-        <div class="connect-actions reveal">
-          <a class="btn btn-solid" href="mailto:jweinkselbaum@gmail.com">Email me</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/jweinkselbaum/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <div class="connect-inner">
+          <div class="section-label">
+            <span class="label-num">05</span>
+            <span class="label-text">Connect</span>
+          </div>
+
+          <h2 class="reveal-headline connect-headline">
+            <div class="line-wrap"><span>Let's build</span></div>
+            <div class="line-wrap"><span>something.</span></div>
+          </h2>
+
+          <p class="connect-sub reveal-fade">
+            Open to meaningful conversations, collaborations, and new opportunities.
+          </p>
+
+          <div class="connect-actions reveal-fade">
+            <a href="mailto:jweinkselbaum@gmail.com" class="btn btn-primary btn-lg">
+              Send an email
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/jweinkselbaum/" target="_blank" rel="noreferrer" class="btn btn-ghost btn-lg">
+              LinkedIn
+            </a>
+          </div>
         </div>
       </section>
+
     </main>
 
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
     <footer class="site-footer">
-      <p>© <span id="year"></span> Jack Weinkselbaum. All rights reserved.</p>
+      <div class="footer-inner">
+        <span class="footer-brand">JW</span>
+        <p class="footer-copy">© <span id="year"></span> Jack Weinkselbaum. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="mailto:jweinkselbaum@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/jweinkselbaum/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
     </footer>
 
+    <!-- GSAP for scroll-driven animations (requires internet connection) -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

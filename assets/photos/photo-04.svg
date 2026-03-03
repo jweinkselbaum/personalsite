@@ -1,0 +1,23 @@
+<svg width="1800" height="900" viewBox="0 0 1800 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e8d8c8"/>
+      <stop offset="50%" stop-color="#d8e8e6"/>
+      <stop offset="100%" stop-color="#e6dfc8"/>
+    </linearGradient>
+    <radialGradient id="orb4a" cx="25%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#D65219" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#D65219" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb4b" cx="75%" cy="60%" r="40%">
+      <stop offset="0%" stop-color="#0A8C86" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0A8C86" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1800" height="900" fill="url(#bg4)"/>
+  <rect width="1800" height="900" fill="url(#orb4a)"/>
+  <rect width="1800" height="900" fill="url(#orb4b)"/>
+  <path d="M0 600 Q450 480 900 540 Q1350 600 1800 460 L1800 900 L0 900Z" fill="rgba(180,165,140,0.3)"/>
+  <rect x="740" y="390" width="320" height="72" rx="36" fill="rgba(255,253,247,0.65)" stroke="rgba(22,19,14,0.12)" stroke-width="1.5"/>
+  <text x="900" y="434" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="26" font-weight="500" fill="#5a5349">Your photo here</text>
+</svg>
