@@ -1,20 +1,35 @@
-# Jack Personal Website
+# Jack Weinkselbaum — Personal Website
 
-A responsive, no-build personal website using plain HTML/CSS/JS.
+A responsive personal website built with plain HTML, CSS, and JavaScript. No build step or npm required.
 
 ## Run locally
 
-From `/Users/jack/Coding/Website`:
+Open a terminal in the project folder and run:
 
 ```bash
-python3 -m http.server 8080
+python3 -m http.server 4242
 ```
 
-Then open: `http://localhost:8080`
+Then open **http://localhost:4242** in your browser.
 
-## Customize quickly
+> **Note:** The scroll animations use GSAP loaded from a CDN, so you need an internet connection for them to work. If you're offline the site displays correctly — just without the animations.
 
-- Update copy in `/Users/jack/Coding/Website/index.html`
-- Update colors/spacing in `/Users/jack/Coding/Website/styles.css`
-- Replace gallery images in `/Users/jack/Coding/Website/assets/photos/`
-- Update email and LinkedIn links in `/Users/jack/Coding/Website/index.html`
+## Add your photos
+
+| File | Location | Purpose |
+|------|----------|---------|
+| `profile.jpg` | `assets/photos/profile.jpg` | Your headshot in the hero section |
+| `photo-01.jpg` | `assets/photos/photo-01.jpg` | Gallery — tall left cell |
+| `photo-02.jpg` | `assets/photos/photo-02.jpg` | Gallery |
+| `photo-03.jpg` | `assets/photos/photo-03.jpg` | Gallery |
+| `photo-04.jpg` | `assets/photos/photo-04.jpg` | Gallery — wide cell |
+| `photo-05.jpg` | `assets/photos/photo-05.jpg` | Gallery |
+
+Colorful placeholder images display automatically for any photo that hasn't been added yet.
+
+## Customize
+
+- **Content & copy** — `index.html`
+- **Colors, fonts, spacing** — `styles.css`
+- **Animations** — `script.js`
+- **Gallery photos** — `assets/photos/`
