@@ -356,8 +356,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   }
 
-  document.querySelectorAll(".gallery-item img").forEach((img) => {
-    img.addEventListener("click", () => openLightbox(img.src, img.alt));
+  document.querySelectorAll(".gallery-item").forEach((item) => {
+    const img = item.querySelector("img");
+    item.addEventListener("click", () => openLightbox(img.src, img.alt));
   });
 
   lightboxClose.addEventListener("click", closeLightbox);

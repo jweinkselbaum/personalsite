@@ -274,7 +274,7 @@ p { line-height: 1.65; }
 }
 
 .hero-name {
-  font-size: clamp(3.4rem, 8.5vw, 7.5rem);
+  font-size: clamp(2.8rem, 5.2vw, 4.8rem);
   line-height: 0.95;
   letter-spacing: -0.045em;
   margin-bottom: 1.4rem;
@@ -778,6 +778,7 @@ p { line-height: 1.65; }
   inset: 0;
   background: linear-gradient(to top, rgba(22, 19, 14, 0.3), transparent 50%);
   opacity: 0;
+  pointer-events: none;
   transition: opacity 400ms ease;
 }
 .gallery-item:hover::after { opacity: 1; }
