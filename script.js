@@ -339,8 +339,10 @@ document.addEventListener("DOMContentLoaded", () => {
      ══════════════════════ */
   const cardModal      = document.getElementById("card-modal");
   const cardModalInner = document.getElementById("card-modal-inner");
+  let activeCard = null;
 
   function openCardModal(card) {
+    activeCard = card;
     const clone = card.cloneNode(true);
 
     // Determine type for accent styling
@@ -388,16 +390,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function closeCardModal() {
+    // Modal spins back out (reverse of open)
     gsap.to(cardModalInner, {
-      scale: 0.88, y: 28, opacity: 0, rotation: 2,
-      duration: 0.22, ease: "power2.in", overwrite: true
+      scale: 0.25, rotation: 135, opacity: 0,
+      duration: 0.5, ease: "back.in(2.1)", overwrite: true
     });
     gsap.to(cardModal, {
-      opacity: 0, duration: 0.28, ease: "power2.in", overwrite: true,
+      opacity: 0, duration: 0.45, ease: "power2.in", overwrite: true,
       onComplete: () => {
         cardModal.classList.remove("open");
         cardModal.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
+        // Spin the original card back in reverse
+        if (activeCard) {
+          gsap.fromTo(activeCard,
+            { rotation: 360, scale: 1.06 },
+            { rotation: 0, scale: 1, duration: 0.42, ease: "back.out(1.3)" }
+          );
+          activeCard = null;
+        }
       }
     });
   }
