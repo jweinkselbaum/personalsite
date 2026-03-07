@@ -371,10 +371,10 @@ document.addEventListener("DOMContentLoaded", () => {
       { opacity: 1, duration: 0.28, ease: "power2.out", overwrite: true }
     );
 
-    // Card springs in with bounce + slight rotation
+    // Card spins and springs in
     gsap.fromTo(cardModalInner,
-      { scale: 0.8, y: 56, rotation: -4, opacity: 0 },
-      { scale: 1, y: 0, rotation: 0, opacity: 1, duration: 0.6, ease: "back.out(1.9)", overwrite: true }
+      { scale: 0.25, rotation: -135, opacity: 0 },
+      { scale: 1, rotation: 0, opacity: 1, duration: 0.65, ease: "back.out(2.1)", overwrite: true }
     );
 
     // Content elements stagger up after card lands
@@ -403,7 +403,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.querySelectorAll(".pillar, .bento-card, .interest-card").forEach((card) => {
-    card.addEventListener("click", () => openCardModal(card));
+    card.addEventListener("click", () => {
+      // Card spins on the page
+      gsap.to(card, {
+        rotation: 360, scale: 1.06, duration: 0.42, ease: "back.out(1.3)",
+        onComplete: () => gsap.set(card, { rotation: 0, scale: 1 })
+      });
+      // Modal opens just after spin starts
+      gsap.delayedCall(0.08, () => openCardModal(card));
+    });
   });
 
   cardModal.addEventListener("click", (e) => {
