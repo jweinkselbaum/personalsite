@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://weinkselbaum.com/</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <image:image>
+      <image:loc>https://weinkselbaum.com/assets/photos/profile.jpg</image:loc>
+      <image:title>Jack Weinkselbaum — professional headshot</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://weinkselbaum.com/assets/photos/photo-01.jpg</image:loc>
+      <image:title>Jack Weinkselbaum at the TCS New York City Marathon finish line</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://weinkselbaum.com/assets/photos/photo-02.jpg</image:loc>
+      <image:title>Jack Weinkselbaum pre-race selfie in Central Park, Front Runners New York</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://weinkselbaum.com/assets/photos/photo-03.jpg</image:loc>
+      <image:title>Jack Weinkselbaum at the WNBA All-Star Game in Indianapolis</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://weinkselbaum.com/assets/photos/photo-04.jpg</image:loc>
+      <image:title>Jack Weinkselbaum at Phantom of the Opera on Broadway, Majestic Theatre</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://weinkselbaum.com/assets/photos/photo-05.jpg</image:loc>
+      <image:title>Jack Weinkselbaum after finishing a winter half marathon with Front Runners New York</image:title>
+    </image:image>
+
+  </url>
+</urlset>
