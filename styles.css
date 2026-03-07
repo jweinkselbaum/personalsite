@@ -977,6 +977,91 @@ p { line-height: 1.65; }
 
 
 /* ═══════════════════════════════════════════════════════════
+   CARD MODAL
+   ═══════════════════════════════════════════════════════════ */
+.card-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 8000;
+  background: rgba(10, 9, 7, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+.card-modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.card-modal-inner {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  padding: 2.8rem 2.5rem 2.5rem;
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  transform: scale(0.94) translateY(16px);
+  transition: transform 320ms var(--ease-out);
+  overflow: hidden;
+}
+.card-modal.open .card-modal-inner {
+  transform: scale(1) translateY(0);
+}
+.card-modal-inner.is-pillar::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(to bottom, var(--orange), var(--teal));
+  border-radius: 2px 0 0 2px;
+}
+.card-modal-inner.accent-orange { border-top: 3px solid var(--orange); }
+.card-modal-inner.accent-teal   { border-top: 3px solid var(--teal); }
+.card-modal-inner.accent-gold   { border-top: 3px solid var(--gold); }
+.card-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease;
+}
+.card-modal-close:hover { background: var(--bg); color: var(--text); }
+.card-modal-inner .pillar-number,
+.card-modal-inner .bento-tag,
+.card-modal-inner .interest-chip { margin-bottom: 1rem; }
+.card-modal-inner .interest-icon { font-size: 2.8rem; margin-bottom: 1rem; display: block; }
+.card-modal-inner .bento-accent { display: none; }
+.card-modal-inner h3 {
+  font-size: 1.9rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+.card-modal-inner p { font-size: 1.05rem; color: var(--muted); line-height: 1.75; }
+.pillar, .bento-card, .interest-card { cursor: pointer; }
+@media (max-width: 480px) {
+  .card-modal-inner { padding: 2.2rem 1.5rem 1.8rem; }
+  .card-modal-inner h3 { font-size: 1.5rem; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
    LIGHTBOX
    ═══════════════════════════════════════════════════════════ */
 .lightbox {

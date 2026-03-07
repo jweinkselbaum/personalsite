@@ -335,6 +335,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ══════════════════════
+     CARD MODAL
+     ══════════════════════ */
+  const cardModal      = document.getElementById("card-modal");
+  const cardModalInner = document.getElementById("card-modal-inner");
+
+  function openCardModal(card) {
+    const clone = card.cloneNode(true);
+
+    // Determine type for accent styling
+    cardModalInner.className = "card-modal-inner";
+    if (card.classList.contains("pillar")) {
+      cardModalInner.classList.add("is-pillar");
+    }
+    const accent = card.getAttribute("data-accent");
+    if (accent) cardModalInner.classList.add(`accent-${accent}`);
+
+    cardModalInner.innerHTML = `
+      <button class="card-modal-close" id="card-modal-close-btn" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <path d="M3 3l16 16M19 3L3 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      ${clone.innerHTML}
+    `;
+
+    document.getElementById("card-modal-close-btn")
+      .addEventListener("click", closeCardModal);
+
+    cardModal.classList.add("open");
+    cardModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeCardModal() {
+    cardModal.classList.remove("open");
+    cardModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".pillar, .bento-card, .interest-card").forEach((card) => {
+    card.addEventListener("click", () => openCardModal(card));
+  });
+
+  cardModal.addEventListener("click", (e) => {
+    if (e.target === cardModal) closeCardModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeCardModal();
+  });
+
+
+  /* ══════════════════════
      LIGHTBOX
      ══════════════════════ */
   const lightbox      = document.getElementById("lightbox");
