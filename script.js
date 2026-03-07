@@ -345,9 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Determine type for accent styling
     cardModalInner.className = "card-modal-inner";
-    if (card.classList.contains("pillar")) {
-      cardModalInner.classList.add("is-pillar");
-    }
+    if (card.classList.contains("pillar")) cardModalInner.classList.add("is-pillar");
     const accent = card.getAttribute("data-accent");
     if (accent) cardModalInner.classList.add(`accent-${accent}`);
 
@@ -366,12 +364,42 @@ document.addEventListener("DOMContentLoaded", () => {
     cardModal.classList.add("open");
     cardModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+
+    // Backdrop fade
+    gsap.fromTo(cardModal,
+      { opacity: 0 },
+      { opacity: 1, duration: 0.28, ease: "power2.out", overwrite: true }
+    );
+
+    // Card springs in with bounce + slight rotation
+    gsap.fromTo(cardModalInner,
+      { scale: 0.8, y: 56, rotation: -4, opacity: 0 },
+      { scale: 1, y: 0, rotation: 0, opacity: 1, duration: 0.6, ease: "back.out(1.9)", overwrite: true }
+    );
+
+    // Content elements stagger up after card lands
+    const contentEls = cardModalInner.querySelectorAll(
+      ".pillar-number, .bento-tag, .interest-icon, .interest-chip, h3, p"
+    );
+    gsap.fromTo(contentEls,
+      { opacity: 0, y: 18 },
+      { opacity: 1, y: 0, duration: 0.38, ease: "power2.out", stagger: 0.07, delay: 0.22, overwrite: true }
+    );
   }
 
   function closeCardModal() {
-    cardModal.classList.remove("open");
-    cardModal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+    gsap.to(cardModalInner, {
+      scale: 0.88, y: 28, opacity: 0, rotation: 2,
+      duration: 0.22, ease: "power2.in", overwrite: true
+    });
+    gsap.to(cardModal, {
+      opacity: 0, duration: 0.28, ease: "power2.in", overwrite: true,
+      onComplete: () => {
+        cardModal.classList.remove("open");
+        cardModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
   }
 
   document.querySelectorAll(".pillar, .bento-card, .interest-card").forEach((card) => {
