@@ -498,6 +498,8 @@ p { line-height: 1.65; }
 .line-wrap {
   display: block;
   overflow: hidden;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
 }
 .line-wrap span {
   display: block;
